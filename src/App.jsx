@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./global.css";
 
 // Components
-import Home from "./Pages/Home";
+
 import Loader from "./components/Loader/Loader";
 import Navbar from "./components/Navbar/Navbar";
 import FloatingEmail from "./components/FloatingEmailButton/FloatingEmail";
-
+import Home from "./pages/Home";
 
 // Reveal engine
 import { initReveal } from "./utils/reveal";
