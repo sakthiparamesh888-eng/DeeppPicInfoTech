@@ -21,7 +21,7 @@ const ContactForm = () => {
           <input
             type="hidden"
             name="to"
-            value="sakthiparamesh888@gmail.com"
+            value="deeppicinfotech@gmail.com"
           />
 
           {/* Visible Inputs */}
