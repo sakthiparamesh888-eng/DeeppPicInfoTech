@@ -9,7 +9,7 @@ import img4 from "../../assets/slider/ai4.jpg";
 import img5 from "../../assets/slider/hdr1.jpg";
 import img6 from "../../assets/slider/hdr2.jpg";
 import img7 from "../../assets/slider/sky1.jpg";
-import img8 from "../../assets/slider/sky2.JPG";
+import img8 from "../../assets/slider/sky2.jpg";
 
 // Put all images into array
 const sliderImages = [img1, img2, img3, img4, img5, img6, img7, img8];
