@@ -1,0 +1,238 @@
+/* global styles placeholder */:root {
+  --primary: #1e90ff;
+  --primary-light: #77c0ff;
+  --primary-glow: rgba(30, 144, 255, 0.5);
+
+  --text-dark: #111;
+  --text-light: #555;
+
+  --bg-white: #ffffff;
+  --bg-light: #f6f7fb;
+
+  --radius: 14px;
+  --transition-fast: 0.2s;
+  --transition-medium: 0.35s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--bg-white);
+  overflow-x: hidden;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility Container */
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+/* root theme variables */
+:root {
+  --primary: #1e90ff;
+  --primary-light: #77c0ff;
+  --primary-glow: rgba(30, 144, 255, 0.4);
+
+  --text-dark: #0f172a;
+  --text-light: #475569;
+
+  --bg-white: #ffffff;
+  --bg-light: #f7f9fc;
+
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.35s ease;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg-white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* universal container */
+.container {
+  width: min(1200px, 90%);
+  margin: auto;
+}
+
+/***************
+   SECTION FIXES  
+****************/
+
+/* 🔥 Ensures every section is visible */
+
+
+/* alternate background */
+section.alt {
+  background: var(--bg-light);
+}
+
+/******* HEADINGS *******/
+section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+section p.section-sub {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 50px;
+}
+
+/********* REVEAL ANIMATIONS **********/
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/******* Image defaults (prevents white screen) *******/
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/******* Fix for blank grid areas *******/
+.grid {
+  display: grid;
+  gap: 25px;
+}
+
+/******* Fix card visibility *******/
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/******* Button global style *******/
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+  box-shadow: 0 0 25px var(--primary-glow);
+}
+/* ================================
+   GLOBAL SCROLL REVEAL ANIMATIONS
+================================ */
+
+/* Base hidden state */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(6px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When visible */
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+/* Slide Left */
+.scroll-left {
+  transform: translateX(-60px);
+}
+.scroll-left.show {
+  transform: translateX(0);
+}
+
+/* Slide Right */
+.scroll-right {
+  transform: translateX(60px);
+}
+.scroll-right.show {
+  transform: translateX(0);
+}
+
+/* Zoom-in */
+.scroll-zoom {
+  transform: scale(0.8);
+}
+.scroll-zoom.show {
+  transform: scale(1);
+}
+
+/* Stagger delay */
+[data-delay] {
+  transition-delay: var(--delay);
+}
+
+/* Parallax Lift on Scroll */
+.section-parallax {
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 0.9s ease-out;
+}
+.section-parallax.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Grid stagger children */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.7s ease;
+}
+.stagger-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}

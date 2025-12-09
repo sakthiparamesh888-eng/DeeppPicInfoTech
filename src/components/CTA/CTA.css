@@ -1,0 +1,101 @@
+/* ===========================
+   CINEMATIC CTA SECTION
+=========================== */
+.cta-section {
+  position: relative;
+  padding: 120px 20px;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Floating background lights */
+.cta-light {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.cta-light-1 {
+  background: rgba(30, 167, 255, 0.45);
+  top: -120px;
+  left: -80px;
+  animation: float1 9s infinite alternate ease-in-out;
+}
+
+.cta-light-2 {
+  background: rgba(0, 102, 255, 0.35);
+  bottom: -140px;
+  right: -90px;
+  animation: float2 10s infinite alternate ease-in-out;
+}
+
+@keyframes float1 {
+  from { transform: translateX(0) translateY(0); }
+  to   { transform: translateX(40px) translateY(60px); }
+}
+
+@keyframes float2 {
+  from { transform: translateX(0) translateY(0); }
+  to   { transform: translateX(-50px) translateY(-40px); }
+}
+
+/* CTA container */
+.cta-inner {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  margin: auto;
+  padding: 60px 30px;
+  border-radius: 30px;
+
+  /* Glassmorphism */
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  
+  animation: fadeUp 1.1s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #050b17;
+  letter-spacing: -0.5px;
+}
+
+/* Neon Button */
+.cta-btn {
+  display: inline-block;
+  padding: 16px 45px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #008CFF, #4CCBFF);
+  color: #fff;
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 22px rgba(0, 136, 255, 0.55),
+              0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.35s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 30px rgba(0, 170, 255, 0.85),
+              0 12px 30px rgba(0, 0, 0, 0.25);
+}

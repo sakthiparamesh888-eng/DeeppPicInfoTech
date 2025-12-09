@@ -1,0 +1,244 @@
+/* ===========================
+   NAVBAR WRAPPER
+=========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 0;
+  z-index: 999;
+  transition: 0.35s ease;
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.navbar.scrolled {
+  padding: 8px 0;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+.nav-container {
+  width: min(1200px, 90%);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -1px;
+}
+
+.logo .blue {
+  color: var(--primary);
+  text-shadow: 0 0 14px var(--primary-glow);
+  font-weight: 900;
+}
+
+
+
+/* ===========================
+   NAV LINKS
+=========================== */
+.nav-links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover underline animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  transition: 0.35s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--primary);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* ===========================
+   CTA BUTTON
+=========================== */
+.nav-btn {
+  padding: 10px 22px;
+  background: var(--primary);
+  color: white;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.35s;
+  box-shadow: 0 0 18px var(--primary-glow);
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 28px var(--primary-glow);
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+.hamburger {
+  width: 32px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #000;
+  border-radius: 6px;
+  transition: 0.35s;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ===========================
+   MOBILE RESPONSIVE MENU
+=========================== */
+@media (max-width: 850px) {
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    box-shadow: -4px 8px 18px rgba(0, 0, 0, 0.15);
+
+    width: 260px;
+    flex-direction: column;
+    padding: 20px 0;
+    border-radius: 12px;
+
+    transform: translateX(110%);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+.logo.stacked {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-lines {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-lines .blue {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.logo-lines .small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+/* ===========================
+   LOGO IMAGE (FIX SIZE & GLOW)
+=========================== */
+.logo-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(30, 167, 255, 0.35);
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(30, 167, 255, 0.55);
+}
+
+/* ===========================
+   STACKED LOGO TEXT
+=========================== */
+.logo.stacked {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-lines {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+}
+
+.logo-lines .blue {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary);
+  text-shadow: 0 0 12px var(--primary-glow);
+}
+
+.logo-lines .small {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}

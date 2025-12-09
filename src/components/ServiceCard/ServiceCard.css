@@ -1,0 +1,118 @@
+/* ================================
+   SERVICE CARD – MODERN PRO UI
+================================ */
+
+.service-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+  border: 1px solid rgba(0, 120, 255, 0.08);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ Soft glow on hover */
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(30, 144, 255, 0.25);
+  border-color: rgba(30, 144, 255, 0.35);
+}
+
+/* 🔵 Gradient glow border on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(135deg, #1ea7ff, #6ad7ff, #1ea7ff);
+  opacity: 0;
+  transition: 0.35s;
+  z-index: -1;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* ================================
+   IMAGE
+================================ */
+.service-img-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.service-img-box img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: 0.45s ease;
+}
+
+/* 📸 Image zoom hover */
+.service-card:hover .service-img-box img {
+  transform: scale(1.07);
+}
+
+/* ================================
+   ICON EFFECT
+================================ */
+.service-icon {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin: 16px 0 12px 0;
+  
+  animation: iconFloat 3s infinite ease-in-out;
+}
+
+@keyframes iconFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+/* 💥 Icon pulse on card hover */
+.service-card:hover .service-icon {
+  transform: scale(1.12);
+  text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
+}
+
+/* ================================
+   TEXT
+================================ */
+.service-title {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #050b17;
+  margin-bottom: 8px;
+}
+
+.service-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+/* ================================
+   ENTRY ANIMATION
+================================ */
+.service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

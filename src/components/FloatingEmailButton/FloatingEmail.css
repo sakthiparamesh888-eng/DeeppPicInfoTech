@@ -1,0 +1,28 @@
+.floating-email {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  color: white;
+  font-size: 1.6rem;
+
+  box-shadow: 0 0 18px var(--primary-glow);
+  cursor: pointer;
+
+  z-index: 9999;
+  transition: 0.3s ease;
+}
+
+.floating-email:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 26px var(--primary-glow);
+}

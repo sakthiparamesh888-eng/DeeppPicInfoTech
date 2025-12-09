@@ -1,0 +1,248 @@
+/* ==============================
+   HERO WRAPPER
+============================== */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* ==============================
+   BACKGROUND SLIDER
+============================== */
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s ease-out;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 1.6s ease-in-out;
+  filter: brightness(65%) contrast(110%);
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+
+/* ==============================
+   CINEMATIC OVERLAY
+============================== */
+.cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.55)
+  );
+  z-index: 3;
+}
+
+
+/* ==============================
+   NEON LIGHT STREAK
+============================== */
+.neon-streak {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 160%;
+  height: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #1ea7ff, transparent);
+  opacity: 0.8;
+  z-index: 4;
+  animation: streakMove 6s infinite linear;
+}
+
+@keyframes streakMove {
+  0% { transform: translate(-50%, 0) scaleX(0.6); }
+  50% { transform: translate(-50%, 0) scaleX(1); }
+  100% { transform: translate(-50%, 0) scaleX(0.6); }
+}
+
+
+/* ==============================
+   HERO CONTENT
+============================== */
+.hero-content {
+  position: absolute;
+  z-index: 5;
+  top: 52%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 3.4rem;
+  font-weight: 900;
+  text-shadow: 0 0 20px rgba(0,0,0,0.6);
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  opacity: 0.92;
+  margin-bottom: 35px;
+}
+
+
+/* ==============================
+   CTA BUTTONS
+============================== */
+.btn-primary,
+.btn-secondary {
+  padding: 14px 32px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: 0.35s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 22px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 32px var(--primary-glow);
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary);
+}
+
+
+/* ==============================
+   FLOATING PARTICLES
+============================== */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 80%, rgba(0,150,255,0.25), transparent 55%),
+    radial-gradient(circle at 70% 20%, rgba(0,150,255,0.25), transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(0,150,255,0.15), transparent 60%);
+  z-index: 2;
+  animation: particlesFloat 9s infinite alternate ease-in-out;
+}
+
+@keyframes particlesFloat {
+  0% { transform: translateY(0px); opacity: 0.85; }
+  100% { transform: translateY(-25px); opacity: 1; }
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .btn-primary, .btn-secondary {
+    padding: 12px 26px;
+  }
+}
+.cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.45),
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.25)
+  );
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 1.4s ease-in-out;
+
+  /* SHARP + CLEAN (no blur) */
+  filter: none !important;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.cinematic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.20)
+  );
+  z-index: 3;
+}
+/* Fix blur / unwanted filters */
+.hero-slide {
+  filter: brightness(70%) contrast(107%) !important;
+}
+
+/* Typing animation */
+.typing {
+  border-right: 3px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typingCaret 0.7s infinite;
+}
+
+@keyframes typingCaret {
+  0% { border-color: transparent; }
+  50% { border-color: white; }
+  100% { border-color: transparent; }
+}
+
+/* DOWN ARROW */
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #1ea7ff;
+  text-shadow: 0 0 12px rgba(30,167,255,0.8);
+  animation: bounceGlow 1.3s infinite ease-in-out;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@keyframes bounceGlow {
+  0% { transform: translate(-50%, 0); opacity: 0.8; }
+  50% { transform: translate(-50%, -12px); opacity: 1; }
+  100% { transform: translate(-50%, 0); opacity: 0.8; }
+}
