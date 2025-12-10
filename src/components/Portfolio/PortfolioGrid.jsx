@@ -45,16 +45,16 @@ const IMAGES = [
   { src: dd3, cat: "Day-to-Dusk" },
   { src: dd4, cat: "Day-to-Dusk" },
 
-  { src: ai1, cat: "Single Image Retouch" },
-  { src: ai2, cat: "Single Image Retouch" },
-  { src: ai3, cat: "Single Image Retouch" },
-  { src: ai4, cat: "Single Image Retouch" },
-  { src: ai5, cat: "Single Image Retouch" },
-  { src: ai6, cat: "Single Image Retouch" },
-  { src: ai7, cat: "Single Image Retouch" },
-  { src: ai8, cat: "Single Image Retouch" },
-  { src: ai9, cat: "Single Image Retouch" },
-  { src: ai10, cat: "Single Image Retouch" }
+  { src: ai1, cat: "Object Removal" },
+  { src: ai2, cat: "Object Removal" },
+  { src: ai3, cat: "Object Removal" },
+  { src: ai4, cat: "Object Removal" },
+  { src: ai5, cat: "Object Removal" },
+  { src: ai6, cat: "Object Removal" },
+  { src: ai7, cat: "Object Removal" },
+  { src: ai8, cat: "Object Removal" },
+  { src: ai9, cat: "Object Removal" },
+  { src: ai10, cat: "Object Removal" }
 ];
 
 const categories = [
@@ -62,7 +62,7 @@ const categories = [
   "HDR Retouching",
   "Sky Replacement",
   "Day-to-Dusk",
-  "Single Image Retouch",
+  "Object Removal",
 ];
 
 const PortfolioGrid = () => {

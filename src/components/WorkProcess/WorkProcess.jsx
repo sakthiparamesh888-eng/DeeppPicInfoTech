@@ -27,7 +27,7 @@ const steps = [
   {
     icon: <FaCheckCircle />,
     title: "Deliver",
-    desc: "Receive final high-resolution images within 24–48 hours."
+    desc: "Receive final high-resolution images within 10-12 hours."
   }
 ];
 

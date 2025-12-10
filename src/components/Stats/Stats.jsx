@@ -17,7 +17,7 @@ const Stats = () => {
         setStats({
           projects: i * 5,        // up to 500
           clients: Math.floor(i * 1.2), // up to 120
-          delivery: 24,           // static
+          delivery: 12,           // static
           satisfaction: 99,       // static
         });
       }

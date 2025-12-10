@@ -23,18 +23,6 @@ import {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <FaMagic />,
-      title: "Cleanup & Enhancement",
-      desc: "Advanced noise reduction, clarity boost, and lighting correction.",
-      image: img1,
-    },
-    {
-      icon: <FaEraser />,
-      title: "Object & Dust Removal",
-      desc: "Remove distractions like wires, bins, blemishes or unwanted objects.",
-      image: img2,
-    },
-    {
       icon: <FaSun />,
       title: "HDR Photo Enhancement",
       desc: "Balanced lighting and HDR blending for stunning dynamic range.",
@@ -46,6 +34,20 @@ const ServicesSection = () => {
       desc: "Beautiful sky transformations for dull or overexposed skies.",
       image: img4,
     },
+      {
+      icon: <FaEraser />,
+      title: "Object  Removal",
+      desc: "Remove distractions like wires, bins, blemishes or unwanted objects.",
+      image: img1,
+    },
+    {
+      icon: <FaMagic />,
+      title: "Day to Dusk",
+      desc: "a popular marketing technique that digitally transforms daytime property photos into stunning twilight images.",
+      image: img2,
+    },
+  
+    
     {
       icon: <FaCrop />,
       title: "Perspective Fixing",

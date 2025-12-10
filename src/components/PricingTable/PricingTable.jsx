@@ -3,8 +3,8 @@ import "./PricingTable.css";
 
 const plans = [
   {
-    name: "Basic Retouch",
-    price: "0.7",
+    name: "HDR",
+    price: "0.5 - 0.6",
     unit: "$ / image",
     features: [
       "Basic Cleanup",
@@ -14,8 +14,8 @@ const plans = [
     ],
   },
   {
-    name: "Sky + Color Grading",
-    price: "3",
+    name: "Sky Replacement",
+    price: "0.1 - 0.2",
     unit: "$ / image",
     highlight: true,
     features: [
@@ -27,7 +27,7 @@ const plans = [
   },
   {
     name: "Day-to-Dusk",
-    price: "2",
+    price: "1 - 2",
     unit: "$ / image",
     features: [
       "Full Dusk Conversion",
@@ -37,8 +37,8 @@ const plans = [
     ],
   },
   {
-    name: "HDR Blending",
-    price: "0.3",
+    name: "Object Removal",
+    price: "0.2 - 0.3",
     unit: "$ / image",
     features: [
       "Multiple Exposure Blending",

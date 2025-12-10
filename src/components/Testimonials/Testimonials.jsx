@@ -4,32 +4,32 @@ import { FaStar } from "react-icons/fa";
 
 const reviews = [
   {
-    name: "Praveen Kumar",
+    name: "Daniel Carter",
     text: "Amazing real estate edits! Sky replacement and HDR correction were perfect.",
     rating: 5,
   },
   {
-    name: "Hari Haran",
+    name: "Emily Thompson",
     text: "Very professional and quick delivery. Loved the color grading!",
     rating: 5,
   },
   {
-    name: "Shalini",
+    name: "Robert Miller",
     text: "Best Photoshop editing team we've worked with. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Shiva",
+    name: "Anna Peterson",
     text: "Best Photoshop editing team we've worked with. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Rithi",
+    name: "Kevin Roberts",
     text: "Best Photoshop editing team we've worked with. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Sathis",
+    name: "Laura Mitchell",
     text: "Best Photoshop editing team we've worked with. Highly recommended!",
     rating: 5,
   },
