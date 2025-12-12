@@ -21,8 +21,8 @@ const Navbar = () => {
        <div className="logo stacked">
   <img className="logo-img" src={logo} alt="logo" />
   <div className="logo-lines">
-    <span className="blue">DEEP</span>
-    <span className="small">PICINFOTECH</span>
+    <span className="blue">DEEPPIC</span>
+    <span className="small">INFOTECH</span>
   </div>
 </div>
 
@@ -45,7 +45,7 @@ const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Get Free Sample
+          View More Samples
         </a>
 
         {/* MOBILE HAMBURGER */}

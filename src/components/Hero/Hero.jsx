@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 
 // Import ALL slider images you have
-import img1 from "../../assets/slider/ai1.jpg";
-import img2 from "../../assets/slider/ai2.jpg";
-import img3 from "../../assets/slider/ai3.jpg";
-import img4 from "../../assets/slider/ai4.jpg";
-import img5 from "../../assets/slider/hdr1.jpg";
-import img6 from "../../assets/slider/hdr2.jpg";
-import img7 from "../../assets/slider/sky1.jpg";
-import img8 from "../../assets/slider/sky2.jpg";
+
+
+import img9 from "../../assets/slider/newimg1.jpg"
+import img10 from "../../assets/slider/newimg2.jpg"
+import img11 from "../../assets/slider/newimg3.jpg"
+import img12 from "../../assets/slider/newimg4.jpg"
+import img13 from "../../assets/slider/newimg5.jpg"
+import img14 from "../../assets/slider/newimg6.jpg"
 
 // Put all images into array
-const sliderImages = [img1, img2, img3, img4, img5, img6, img7, img8];
+const sliderImages = [img9,img10,img11,img12,img13,img14];
 
 const Hero = () => {
   const [index, setIndex] = useState(0);

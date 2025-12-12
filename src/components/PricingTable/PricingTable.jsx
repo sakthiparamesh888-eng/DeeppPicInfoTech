@@ -5,46 +5,42 @@ const plans = [
   {
     name: "HDR",
     price: "0.5 - 0.6",
-    unit: "$ / image",
+    unit: "$ Per image",
     features: [
-      "Basic Cleanup",
-      "Brightness Fix",
-      "Small Object Removal",
-      "1 Revision"
+      "Multiple Exposure Blending",
+      "Highlight/Shadow Recovery",
+      "Perspective Fix"
     ],
   },
   {
     name: "Sky Replacement",
     price: "0.1 - 0.2",
-    unit: "$ / image",
+    unit: "$ Per image",
     highlight: true,
     features: [
       "Sky Replacement",
       "HDR Enhancement",
-      "Color Grading",
-      "2 Revisions"
+      "Color Grading"
+   
     ],
   },
   {
     name: "Day-to-Dusk",
     price: "1 - 2",
-    unit: "$ / image",
+    unit: "$ Per image",
     features: [
       "Full Dusk Conversion",
       "Advanced Editing",
-      "Realistic Lighting",
-      "Unlimited Revisions"
+      "Realistic Lighting"
     ],
   },
   {
     name: "Object Removal",
     price: "0.2 - 0.3",
-    unit: "$ / image",
+    unit: "$ Per image",
     features: [
-      "Multiple Exposure Blending",
-      "Highlight/Shadow Recovery",
-      "Perspective Fix",
-      "2 Revisions"
+      "Smaller to Larger Objects Removal"
+      
     ],
   },
 ];

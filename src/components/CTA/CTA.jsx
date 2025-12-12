@@ -19,7 +19,7 @@ const CTA = () => {
           rel="noopener noreferrer"
           className="cta-btn"
         >
-          Get Free Sample →
+          View More Samples →
         </a>
       </div>
     </section>

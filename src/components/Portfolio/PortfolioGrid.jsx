@@ -1,83 +1,94 @@
 import React, { useState } from "react";
 import "./PortfolioGrid.css";
+import SwiperCard from "./SwiperCard";
 
-// MANUAL IMPORTS
-import ai1 from "../../assets/slider/ai1.jpg";
-import ai2 from "../../assets/slider/ai2.jpg";
-import ai3 from "../../assets/slider/ai3.jpg";
-import ai4 from "../../assets/slider/ai4.jpg";
-import ai5 from "../../assets/slider/ai5.jpg";
-import ai6 from "../../assets/slider/ai6.jpg";
-import ai7 from "../../assets/slider/ai7.jpg";
-import ai8 from "../../assets/slider/ai8.jpg";
-import ai9 from "../../assets/slider/ai9.jpg";
-import ai10 from "../../assets/slider/ai10.jpg";
+// Auto-import all images from /assets/slider
+const imported = import.meta.glob("../../assets/slider/*.{jpg,jpeg,png}", {
+  eager: true,
+});
 
-import dd1 from "../../assets/slider/dd1.jpg";
-import dd2 from "../../assets/slider/dd2.jpg";
-import dd3 from "../../assets/slider/dd3.jpg";
-import dd4 from "../../assets/slider/dd4.jpg";
+// Convert to map: { filename : URL }
+const imgMap = {};
+Object.keys(imported).forEach((path) => {
+  const file = path.split("/").pop();
+  imgMap[file] = imported[path].default;
+});
 
-import hdr1 from "../../assets/slider/hdr1.jpg";
-import hdr2 from "../../assets/slider/hdr2.jpg";
-import hdr3 from "../../assets/slider/hdr3.jpg";
-import hdr4 from "../../assets/slider/hdr4.jpg";
+// Generic function to detect a/b image pairs
+const buildPairs = (prefix, category) => {
+  const list = [];
+  let i = 1;
 
-import sky1 from "../../assets/slider/sky1.jpg";
-import sky2 from "../../assets/slider/sky2.jpg";
-import sky3 from "../../assets/slider/sky3.jpg";
-import sky4 from "../../assets/slider/sky4.jpg";
+  while (true) {
+    const after = imgMap[`${prefix}${i}a.jpg`];
+    const before = imgMap[`${prefix}${i}b.jpg`];
 
-// CATEGORY LIST
-const IMAGES = [
-  { src: hdr1, cat: "HDR Retouching" },
-  { src: hdr2, cat: "HDR Retouching" },
-  { src: hdr3, cat: "HDR Retouching" },
-  { src: hdr4, cat: "HDR Retouching" },
+    if (!after || !before) break;
 
-  { src: sky1, cat: "Sky Replacement" },
-  { src: sky2, cat: "Sky Replacement" },
-  { src: sky3, cat: "Sky Replacement" },
-  { src: sky4, cat: "Sky Replacement" },
+    list.push({ cat: category, after, before });
+    i++;
+  }
 
-  { src: dd1, cat: "Day-to-Dusk" },
-  { src: dd2, cat: "Day-to-Dusk" },
-  { src: dd3, cat: "Day-to-Dusk" },
-  { src: dd4, cat: "Day-to-Dusk" },
+  return list;
+};
 
-  { src: ai1, cat: "Object Removal" },
-  { src: ai2, cat: "Object Removal" },
-  { src: ai3, cat: "Object Removal" },
-  { src: ai4, cat: "Object Removal" },
-  { src: ai5, cat: "Object Removal" },
-  { src: ai6, cat: "Object Removal" },
-  { src: ai7, cat: "Object Removal" },
-  { src: ai8, cat: "Object Removal" },
-  { src: ai9, cat: "Object Removal" },
-  { src: ai10, cat: "Object Removal" }
-];
+// DAY-TO-DUSK (single pair)
+const buildDayToDusk = () => {
+  const a = imgMap["daytoduskA.jpg"];
+  const b = imgMap["daytoduskB.jpg"];
+
+  return a && b ? [{ cat: "Day-to-Dusk", after: a, before: b }] : [];
+};
+
+// SKY (auto darkened before)
+const buildSky = () => {
+  const list = [];
+  let i = 1;
+
+  while (imgMap[`sky${i}.jpg`]) {
+    const after = imgMap[`sky${i}.jpg`];
+    list.push({
+      cat: "Sky Replacement",
+      after,
+      before: after,
+      sky: true,
+    });
+    i++;
+  }
+
+  return list;
+};
+
+// BUILD CATEGORIES
+const HDR = buildPairs("hdr", "HDR Retouching");
+const NEWIMG = buildPairs("newimg", "Object Removal");
+const SINGLE = buildPairs("single", "Object Removal");
+const DAY2DUSK = buildDayToDusk();
+const SKY = buildSky();
+
+const ALL = [...HDR, ...NEWIMG, ...SINGLE, ...DAY2DUSK, ...SKY];
 
 const categories = [
   "All",
   "HDR Retouching",
-  "Sky Replacement",
-  "Day-to-Dusk",
   "Object Removal",
+  "Day-to-Dusk",
+  "Sky Replacement",
 ];
 
 const PortfolioGrid = () => {
   const [active, setActive] = useState("All");
 
   const filtered =
-    active === "All" ? IMAGES : IMAGES.filter((img) => img.cat === active);
+    active === "All" ? ALL : ALL.filter((item) => item.cat === active);
 
   return (
     <section id="portfolio" className="portfolio-section">
       <div className="container">
         <h2 className="portfolio-title">Our Portfolio</h2>
-        <p className="portfolio-sub">Explore our professional edits</p>
+        <p className="portfolio-sub">Slide to see Before & After</p>
 
-        {/* FILTER BUTTONS */}
+        {/* Category Buttons */}
         <div className="portfolio-filters">
           {categories.map((c) => (
             <button
@@ -90,28 +101,16 @@ const PortfolioGrid = () => {
           ))}
         </div>
 
-        {/* GRID */}
+        {/* Grid */}
         <div className="masonry-grid">
-          {filtered.map((img, idx) => (
-            <div className="masonry-item tilt-card" key={idx}>
-              
-              {/* BEFORE FRAME */}
-              <div
-                className="before-frame"
-                style={{ backgroundImage: `url(${img.src})` }}
-              >
-                <span className="before-text">Before</span>
-              </div>
-
-              {/* AFTER FRAME */}
-              <div className="after-frame">
-                <img src={img.src} alt="" loading="lazy" />
-                <span className="after-text">After</span>
-              </div>
-
-              {/* LABEL */}
-              <span className="img-tag">{img.cat}</span>
-            </div>
+          {filtered.map((img, i) => (
+            <SwiperCard
+              key={i}
+              before={img.before}
+              after={img.after}
+              sky={img.sky}
+              tag={img.cat}
+            />
           ))}
         </div>
       </div>
