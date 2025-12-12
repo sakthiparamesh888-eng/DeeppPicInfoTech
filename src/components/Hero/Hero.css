@@ -246,3 +246,106 @@
   50% { transform: translate(-50%, -12px); opacity: 1; }
   100% { transform: translate(-50%, 0); opacity: 0.8; }
 }
+/* ============================================
+   PERFECT HERO RESPONSIVE — MOBILE FIX (360px+)
+===============================================*/
+@media (max-width: 768px) {
+
+  /* Reduce overall hero height for small screens */
+  .hero-section {
+    height: 92vh;
+  }
+
+  /* Fix slider zoom issue */
+  .hero-slide {
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(72%) contrast(105%) !important;
+  }
+
+  /* Adjust hero content position */
+  .hero-content {
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 16px;
+  }
+
+  /* Title responsive */
+  .hero-title {
+    font-size: 2rem;       /* PERFECT for 360px width */
+    line-height: 1.25;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  /* Typing animation width fix */
+  .typing {
+    font-size: 1.9rem;
+    max-width: 90%;
+    margin: 0 auto;
+    white-space: normal;
+    border-right: none;
+  }
+
+  /* Subtitle responsive */
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-top: 8px;
+    margin-bottom: 22px;
+    opacity: 0.9;
+  }
+
+  /* Buttons stack horizontally but smaller */
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    margin: 0 6px;
+  }
+
+  /* Fix CTA button row */
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Down arrow position fix */
+  .scroll-down-arrow {
+    bottom: 16px;
+    font-size: 2.2rem;
+  }
+
+  /* Fix particles on mobile */
+  .floating-particles {
+    opacity: 0.6;
+  }
+}
+
+/* EXTRA SMALL DEVICE FIX (under 400px) */
+@media (max-width: 400px) {
+
+  .hero-title {
+    font-size: 1.7rem;
+  }
+
+  .typing {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.9rem;
+    padding: 9px 18px;
+  }
+
+  .scroll-down-arrow {
+    font-size: 2rem;
+  }
+}

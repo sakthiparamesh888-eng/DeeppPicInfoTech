@@ -23,6 +23,7 @@ const Navbar = () => {
   <div className="logo-lines">
     <span className="blue">DEEPPIC</span>
     <span className="small">INFOTECH</span>
+    
   </div>
 </div>
 
